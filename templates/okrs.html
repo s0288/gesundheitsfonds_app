@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        {% for okr in okrs %}
+        <p></p>
+        <ol class="list-group">
+            <li class="list-group-item">
+                <b>{{ okr["objective"] }}</b>
+            </li>
+            {% for key_result in okr["key_results"] %}
+            <li class="list-group-item">
+                {{ key_result }}
+            </li>
+            {% endfor %}
+            </ol>
+        </ol>
+        {% endfor %}
+    </div>
+
+    <div class="container">
+        <p></p>
+        Diese Ziele sind mir so wichtig, dass ich 1000 EUR investieren möchte. 
+            Wenn ich meine Ziele erreiche, erhalte ich 750 EUR zurück. 
+            Der Rest wird an <a href="https://effektiv-spenden.org/">Effektiv Spenden</a> gespendet.
+    </div>
+{% endblock %}
